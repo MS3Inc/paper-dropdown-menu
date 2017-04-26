@@ -144,7 +144,7 @@ respectively.
           selectedItemLabel: {
             type: String,
             notify: true,
-            readOnly: true
+            readOnly: false
           },
 
           /**
@@ -268,7 +268,7 @@ respectively.
           dynamicAlign: {
             type: Boolean
           },
-            
+
           /**
            * Whether focus should be restored to the dropdown when the menu closes.
            */
@@ -408,7 +408,11 @@ respectively.
           if (e) {
             e.setAttribute('aria-expanded', openState);
           }
-        }
+        },
+
+        _setSelectedItemLabel: function (value) {
+          this.selectedItemLabel = value;
+        },
       });
     })();
   </script>
